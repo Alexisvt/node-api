@@ -1,10 +1,10 @@
 import express from 'express';
 
+import postRoutes from './routes/post';
+
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send("Hello world!");
-})
+app.use('/', postRoutes);
 
 const PORT = process.env.PORT || 5000;
 
