@@ -1,8 +1,9 @@
-const express = require('express');
-const { getPosts } = require('../controllers/post');
+import { Router } from 'express';
 
-const route = express.Router();
+import { getPosts } from '../controllers/post.js';
+
+const route = Router();
 
 route.get('/', getPosts)
 
-module.exports = route;
+export default route;
