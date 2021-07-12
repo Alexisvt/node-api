@@ -6,6 +6,8 @@ import mongodbConnection from './mongo.connection.js';
 import postRoutes from './routes/post.js';
 
 const app = express();
+
+app.use(express.json());
 app.use(helmet())
 app.use(morgan("dev"));
 mongodbConnection();
