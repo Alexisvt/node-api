@@ -4,13 +4,8 @@ export const getPosts = (req, res) => {
   res.send("Hello world!");
 }
 
-export const createPost = (req, res) => {
+export const createPost = async (req, res) => {
   const post = new Post(req.body);
-  post.save((err, result) => {
-    if (err) {
-      return res.status(400).json({ message: err })
-    }
-
-    res.status(201).json(result)
-  })
+  const result = await post.save();
+  res.status(201).json(result);
 }

@@ -1,4 +1,5 @@
 import express from 'express';
+import expressValidator from 'express-validator';
 import helmet from 'helmet';
 import morgan from 'morgan';
 
@@ -8,6 +9,7 @@ import postRoutes from './routes/post.js';
 const app = express();
 
 app.use(express.json());
+app.use(expressValidator());
 app.use(helmet())
 app.use(morgan("dev"));
 mongodbConnection();
